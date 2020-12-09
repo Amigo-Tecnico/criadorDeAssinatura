@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Criador de Assinaturas do Amigo Técnico</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+
+	<!--Meta Tags-->
+	<meta name="description" content="O criador de assinaturas para e-mail oficial do Amigo Técnico!" />
+    <meta name="keywords" content="Assinatura e-mail mail signature html gmail outlook hotmail email criador ferramenta amigo técnico amigotecnico suporte" />
+    <meta name="author" content="Amigo Técnico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="application-name" content="Criador de Assinatura do Amigo Técnico" />
+    <meta name="robots" content="index, follow" />
+    <meta name="revisit-after" content="7 days" />
+    <!-- OpenGraph -->
+    <meta property="og:image" content="https://www.amigotecnico.com.br/assets/themes/amigotecnico/img/Logo.png" />
+    <meta property="og:title" content="Criador de Assinaturas do Amigo Técnico " />
+    <meta property="og:url" content="https://www.amigotecnico.com.br/" />
+    <meta property="og:description" content="Crie gratuitamente uma assinatura de e-mail profissional com nossa ferramenta!" />
+    <meta property="og:type" content="website" />
+    <!-- TwitterCard -->
+    <meta name="twitter:creator" content="@amigo_tecnico" />
+    <meta name="twitter:site" content="@amigo_tecnico" />
+    <meta name="twitter:card" content="Amigo Técnico - O melhor site para tirar suas dúvidas sobre informática, computadores e mais! Faça perguntas e seja respondido por um técnico!" />
+    <meta name="twitter:title" content="Criador de Assinaturas do Amigo Técnico  " />
+    <meta name="twitter:image" content="https://www.amigotecnico.com.br/assets/themes/amigotecnico/img/Logo.png" />
+    <meta name="twitter:description" content="Crie gratuitamente uma assinatura de e-mail profissional com nossa ferramenta!" />
+
+	<!-- jQuery-->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	
+	<!-- PopperJS-->
+	<script src="https://unpkg.com/@popperjs/core@2"></script>	
+	
+	<!-- Bootstrap Colorpicker-->
+	<script src="dist/js/bootstrap.bundle.min.js"></script>
+	<script src="dist/js/bootstrap-colorpicker.js"></script> 
+	<link rel="stylesheet" href="dist/css/bootstrap-colorpicker.min.css">
+
+	<!--ClipboardJS-->
+	<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+
+	<!-- Assinatura-->
+	<script type = "text/javascript" src = "js/assinatura.js" ></script>
+	<link rel="stylesheet" href="css/assinatura.css">
+
+	<!--Font Awesome-->
+	<link rel="stylesheet" href="dist/css/all.css">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-88YP8DXLGK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-88YP8DXLGK');
+</script>
+</head>
+
+<body>
+	<!-- Div Geral-->
+	<div class="container"></div>
+	<div class="row">
+<!--o editor começa aqui-->
+<div class="col" style="margin-left: 15px;">
+<br>
+<!-- Área das informações-->
+<div class="card col-lg-auto" style="border-color: #c0c0c0">
+	<!--<h5 class="card-header">Informações</h5>-->
+	<h4 class="card-title" style="margin-left: 5px;">Informações</h4>
+	
+		<form>
+			<div class="container-sm"> 
+				<h5 class="card-subtitle mb-2" style="color:#10a355">Suas informações</h5>
+				<div class="form-row input-group">
+					<div class="form-group col-12">			
+						<input type="text" class="form-control" id="inputNome" placeholder="Nome" onblur="document.getElementById('PrimeiroNome').innerHTML = value;" value="Nome Completo"/>
+					</div>
+					
+				</div>
+
+				<!-- Input do Cargo-->
+				<div class="form-row input-group">
+					<div class="col-6">
+						<p><input type="text" class="form-control" id="inputCargo" placeholder="Cargo" onblur="document.getElementById('htmlCargo').innerHTML= '<br>' + value;" value="Cargo" /></p> <!-- Texto cargo-->
+
+					
+					</div>
+				<!-- Input do Departamento-->
+					<div class="col-6">
+						<p><input type="text" class="form-control" id="inputDepartamento" placeholder="Departamento" onblur="document.getElementById('htmlDepartamento').innerHTML = '<br>' + value;" value="Departamento"/></p> <!-- Texto departamento-->					
+					</div>
+				</div>
+				<br>
+				<h5 class="card-subtitle mb-2 " style="color:#10a355">Seus contatos</h5>
+				<div class="form-row input-group">
+					<!--Site-->
+					<div class="col-md-6">
+					<p><input type="url" class="form-control" id="inputSite" placeholder="Site" onblur="document.getElementById('htmlLinkLogo').setAttribute('href', value); document.getElementById('htmlSite').setAttribute('href', value); document.getElementById('htmlSite').innerHTML = corrigeSite(value);"></p>
+					</div>
+					<!--E-mail-->
+					<div class="col-md-6">
+						<p><input type="email" class="form-control" id="inputEmail" placeholder="E-mail" onblur="document.getElementById('linkEmail').setAttribute('href', 'mailto:' + value); document.getElementById('textoEmail').innerHTML= value"></p>
+						</div>
+				</div>
+
+				<div class="form-row input-group">
+					<!--Celular-->
+					<div class="col-md-6">
+						<p><input type="tel" class="form-control" onkeypress="mascara( this, mtel )" id="inputCelular" placeholder="Celular" maxlength="15" onblur="document.getElementById('htmlCelular').innerHTML= value"></p>
+					</div>
+					<!--Telefone-->
+					<div class="col-md-6">
+						<p><input type="tel" class="form-control" onkeypress="mascara( this, mtel )" id="inputTelefone" placeholder="Telefone" maxlength="14" onblur="document.getElementById('htmlTelefone').innerHTML= value"></p>
+						</div>
+						
+				</div>
+			</div>
+		
+		</form>
+		</div>
+<br>
+		
+		<!-- Área do Layout-->
+		<div class="card" style="border-color: #c0c0c0">
+			<div class="card-body">
+				<h4 class="card-title" style="margin-left: 0px;">Design</h4>
+				<!--Layout do nome-->
+				<h5 class="card-subtitle mb-2" style="color:#10a355; margin-left: 15px;">Informações</h5>
+				<h6 class="card-subtitle mb-2" style="margin-left: 15px;">Nome</h6>
+				<form style="  display: flex; flex-flow: row wrap; align-items: center;">
+					
+					<div class="form-group col-md-3">
+						<input type="text" class="form-control" id="inputNomeCor" value=" " onblur="document.getElementById('PrimeiroNome').style.color = value; this.style.backgroundColor = value" style="background-color: #000000;"/>
+					</div>
+					<div class="form-group col-md-auto">
+						<div class="form-check" style="margin-top: 10px;">
+							<input class="form-check-input" type="checkbox" value="" id="inputNomeNegrito">
+							<label class="form-check-label" for="defaultCheck1">
+							  <b>Nome em negrito</b>
+							</label>
+						  </div>
+					</div>
+				</form>
+				<!--Layout do Cargo-->
+				<h6 class="card-subtitle mb-2" style="margin-left: 15px;" style="margin-left 10px">Cargo</h6>
+				<form style="display: flex; flex-flow: row wrap; align-items: center;">
+					<div class="form-group">
+						<div class="form-check" style="margin-top: 10px; padding-left: 10px; padding-right: 50px;">
+							<div class="form-check checkbox" style="padding-left: 0rem; padding-right: 10px;"> <!-- CheckBox cargo-->
+							<input class="form-check-input" type="checkbox" value="" id="chkCargo" checked=true>
+							<label class="form-check-label" for="chkCargo">
+							<span>Incluir</span>
+							</label>
+							 </div>
+						</div>
+					</div>
+
+					<div class="form-group">
+					<span></span><input type="text" class="form-control" id="inputCargoCor" data-color="" value="" onblur="document.getElementById('htmlCargo').style.color = value; this.style.backgroundColor = value" style="background-color: #666666;" />
+					</div>
+					<div class="form-group">
+						<div class="form-check checkbox" style="margin-top: 10px;">
+							<input class="form-check-input" type="checkbox" value="" id="inputCargoNegrito">
+							<label class="form-check-label" for="inputCargoNegrito">
+							  <span><b>Negrito</b></span>
+							</label>
+						  </div>
+					</div>
+				</form>
+				<!--Layout do Departamento-->
+
+				<h6 class="card-subtitle mb-2" style="margin-left: 15px;" style="margin-left 10px">Departamento</h6>
+				<form style="display: flex; flex-flow: row wrap; align-items: center;">
+					<div class="form-group">
+						<div class="form-check" style="margin-top: 10px; padding-left: 10px; padding-right: 50px;">
+							<div class="form-check checkbox" style="padding-left: 0rem; padding-right: 10px;"> <!-- CheckBox Departamento-->
+							<input class="form-check-input" type="checkbox" value="" id="chkDepart" checked=true>
+							<label class="form-check-label" for="chkDepart">
+							<span>Incluir</span>
+							</label>
+							 </div>
+						</div>
+					</div>
+
+					<div class="form-group">
+					<span></span><input type="text" class="form-control" id="inputDepartCor" data-color="" value="" onblur="document.getElementById('htmlDepartamento').style.color = value; this.style.backgroundColor = value" style="background-color: #666666;" />
+					</div>
+					<div class="form-group">
+						<div class="form-check checkbox" style="margin-top: 10px;">
+							<input class="form-check-input" type="checkbox" value="" id="inputDepartNegrito">
+							<label class="form-check-label" for="inputDepartNegrito">
+							  <span><b>Negrito</b></span>
+							</label>
+						  </div>
+					</div>
+				</form>
+				<!--Design das Informações-->
+				<h5 class="card-subtitle mb-2" style="color:#10a355; margin-left: 15px;">Contatos</h5>
+
+				<!--Design do E-mail-->
+				<h6 class="card-subtitle mb-2" style="margin-left: 15px;" style="margin-left 10px">E-mail</h6>
+				<form style="display: flex; flex-flow: row wrap; align-items: center;">
+					<div class="form-group">
+						<div class="form-check" style="margin-top: 10px; padding-left: 10px; padding-right: 50px;">
+							<div class="form-check checkbox" style="padding-left: 0rem; padding-right: 10px;"> <!-- CheckBox e-mail-->
+							<input class="form-check-input" type="checkbox" value="" id="chkEmail" checked=true>
+							<label class="form-check-label" for="chkEmail">
+							<span>Incluir</span>
+							</label>
+							 </div>
+						</div>
+					</div>
+
+					<div class="form-group">
+					<span></span><input type="text" class="form-control" id="inputEmailCor" data-color="" value="" onblur="document.getElementById('textoEmail').style.color = value; this.style.backgroundColor = value" style="background-color: #3388cc ;" />
+					</div>
+					<div class="form-group">
+						<div class="form-check checkbox" style="margin-top: 10px;">
+							<input class="form-check-input" type="checkbox" value="" id="chkImgEmail" checked=true>
+							<label class="form-check-label" for="chkImgEmail">
+							  <span><b>Ícone</b></span>
+							</label>
+						  </div>
+					</div>
+				</form>
+
+				<!--Design do Celular-->
+				<h6 class="card-subtitle mb-2" style="margin-left: 15px;" style="margin-left 10px">Celular</h6>
+				<form style="display: flex; flex-flow: row wrap; align-items: center;">
+					<div class="form-group">
+						<div class="form-check" style="margin-top: 10px; padding-left: 10px; padding-right: 50px;">
+							<div class="form-check checkbox" style="padding-left: 0rem; padding-right: 10px;"> <!-- CheckBox celular-->
+							<input class="form-check-input" type="checkbox" value="" id="chkCelular" checked=true>
+							<label class="form-check-label" for="chkCelular">
+							<span>Incluir</span>
+							</label>
+							 </div>
+						</div>
+					</div>
+
+					<div class="form-group">
+					<span></span><input type="text" class="form-control" id="inputCelularCor" data-color="" value="" onblur="document.getElementById('htmlCelular').style.color = value; this.style.backgroundColor = value" style="background-color: #000000 ;" />
+					</div>
+					<div class="form-group">
+						<div class="form-check checkbox" style="margin-top: 10px;">
+							<input class="form-check-input" type="checkbox" value="" id="chkImgCelular" checked=true>
+							<label class="form-check-label" for="chkImgCelular">
+							  <span><b>Ícone</b></span>
+							</label>
+						  </div>
+					</div>
+				</form>
+				
+				<!--Design do Telefone-->
+				<h6 class="card-subtitle mb-2" style="margin-left: 15px;" style="margin-left 10px">Telefone</h6>
+				<form style="display: flex; flex-flow: row wrap; align-items: center;">
+					<div class="form-group">
+						<div class="form-check" style="margin-top: 10px; padding-left: 10px; padding-right: 50px;">
+							<div class="form-check checkbox" style="padding-left: 0rem; padding-right: 10px;"> <!-- CheckBox telefone-->
+							<input class="form-check-input" type="checkbox" value="" id="chkTelefone" checked=true>
+							<label class="form-check-label" for="chkTelefone">
+							<span>Incluir</span>
+							</label>
+							 </div>
+						</div>
+					</div>
+
+					<div class="form-group">
+					<span></span><input type="text" class="form-control" id="inputTelefoneCor" data-color="" value="" onblur="document.getElementById('htmlTelefone').style.color = value; this.style.backgroundColor = value" style="background-color: #000000 ;" />
+					</div>
+					<div class="form-group">
+						<div class="form-check checkbox" style="margin-top: 10px;">
+							<input class="form-check-input" type="checkbox" value="" id="chkImgTelefone" checked=true>
+							<label class="form-check-label" for="chkImgTelefone">
+							  <span><b>Ícone</b></span>
+							</label>
+						  </div>
+					</div>
+				</form>
+
+				<!--Design do Site-->
+				<h6 class="card-subtitle mb-2" style="margin-left: 15px;" style="margin-left 10px">Site</h6>
+				<form style="display: flex; flex-flow: row wrap; align-items: center;">
+					<div class="form-group">
+						<div class="form-check" style="margin-top: 10px; padding-left: 10px; padding-right: 50px;">
+							<div class="form-check checkbox" style="padding-left: 0rem; padding-right: 10px;"> <!-- CheckBox Site-->
+							<input class="form-check-input" type="checkbox" value="" id="chkSite" checked=true>
+							<label class="form-check-label" for="chkSite">
+							<span>Incluir</span>
+							</label>
+							 </div>
+						</div>
+					</div>
+
+					<div class="form-group">
+					<span></span><input type="text" class="form-control" id="inputSiteCor" data-color="" value="" onblur="document.getElementById('htmlSite').style.color = value; this.style.backgroundColor = value" style="background-color: #3388cc ;" />
+					</div>
+					<div class="form-group">
+						<div class="form-check checkbox" style="margin-top: 10px;">
+							<input class="form-check-input" type="checkbox" value="" id="chkImgSite" checked=true>
+							<label class="form-check-label" for="chkImgSite">
+							  <span><b>Ícone</b></span>
+							</label>
+						  </div>
+					</div>
+				</form>
+				<!--Design da imagem-->
+				<h5 class="card-subtitle mb-2" style="color:#10a355; margin-left: 15px;">Imagem</h5>
+				<h6 class="card-subtitle mb-2" style="margin-left: 15px;" style="margin-left 10px">Endereço da Imagem</h6>
+				<!-- Endereço da Imagem-->
+				<form style="display: flex; flex-flow: row wrap; align-items: center;">
+					<div class="form-group">
+						<div class="form-check" style="margin-top: 10px; padding-left: 10px; padding-right: 50px;">
+							<input type="file" class="form-control" id="endImagem" value="/img/logo.png" onchange="uploadLogo(this)" />
+						</div>
+					</div>
+				</form>
+
+				
+				<!--Formato da imagem-->
+				<h6 class="card-subtitle mb-2" style="margin-left: 15px;" style="margin-left 10px">Formato da Imagem</h6>							
+				<form style="display: flex; flex-flow: row wrap; align-items: center;" name="formatos">
+					<div class="form-group">
+						<div class="form-check" style="margin-top: 10px; padding-left: 15px; padding-right: 50px;">
+							<div class="form-check" style="padding-left: 20px;"> <!-- Radio Quadrado-->
+							<input class="form-check-input rdButton" type="radio" value="quadrado" name="formato" id='formQuadrado'>
+							<label for="quadrado">
+							<span>Quadarado</span>
+							</label>
+							 </div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-check" style="margin-top: 10px; padding-left: 10px; padding-right: 50px;">
+							<div class="form-check" style="padding-left: 20px;"> <!-- Radio Quadrado-->
+							<input class="form-check-input" type="radio" value="arredondado" name="formato">
+							<label for="quadrado">
+							<span>Arredondado</span>
+							</label>
+							 </div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-check" style="margin-top: 10px; padding-left: 10px; padding-right: 50px;">
+							<div class="form-check" style="padding-left: 20px;"> <!-- Radio Quadrado-->
+							<input class="form-check-input" type="radio" value="circulo" name="formato" checked=true>
+							<label for="quadrado">
+							<span>Circulo</span>
+							</label>
+							 </div>
+						</div>
+					</div>
+				</form>
+				<button type="button" onClick="copyTextToClipboard()" class="btn btn-primary clipboard" alt="Copy to clipboard">Copiar Assinatura</button>
+				<button type="button" onClick="download(document.getElementById('inputNome').value, document.getElementById('assinatura').innerHTML)" class="btn btn-primary dwn-btn" alt="Copy to clipboard">Download da Assinatura</button>
+				
+				
+			</div>
+		</div>
+
+</div>
+<!--E vai até aqui-->
+
+<!-- A assinatura começa aqui-->
+
+<div class="col-md-6" id="assinatura">
+	<meta charset="UTF-8">
+	<br><br>
+	<table width="500" cellspacing="0" cellpadding="0" border="0" style="position: fixed;">
+		<tr>
+			<td width="150" style="vertical-align:center;padding-right:6px;">
+				<a style="display:inline-block" href="https://www.amigotecnico.com.br" id="htmlLinkLogo">
+					<img style="border:none; border-radius: 50%" width="150" height="150" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/nar26cy8ogcz1ggukwlr.png" id="htmlLogo">
+				</a>
+			</td> 
+			<td style="border-left:solid #000000 2px;" width="10" id="htmlDivisor"></td>
+			<td style="padding-left: 10px;vertical-align: top; text-align:left;color:#000000;font-size:16px;font-family:Roboto, helvetica, arial;; text-align:left"> <span><span style="margin-right:3px;color:#000000;font-size:16px;font-family:Roboto, helvetica, arial" id="PrimeiroNome">Nome Completo</span>
+				<!-- Cargo -->
+				<span style="margin-right:3px;color:#666666;font-size:13px;font-family: open sans, helvetica, arial" id="htmlCargo"><br>Cargo</span>
+				<!-- Departamento -->
+				<span style="margin-right:3px;color:#666666;font-size:13px;font-family: open sans, helvetica, arial" id="htmlDepartamento"><br>Departamento</span></span>
+				<br>
+				<div id='htmlEmail'> 
+				<table cellspacing="0" cellpadding="0" border="0" style="margin:0 3px 3px 0;display:inline;" >
+					<tr>
+						<td style="padding-right:3px" id="imgEmail">
+							<img width="25" height="25" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/zuhy6nfj1127y2te60vm.png" alt="email" style="border:none;">
+							
+						</td>
+						<td><span style="font:12px helvetica, arial;" id="email"><a href="" style="color:#3388cc;text-decoration:none;" id="linkEmail"><span id="textoEmail">e-mail@e-mail.com.br</span></a></span>
+						</td>
+					</tr>
+				</table> 
+				</div>
+				<div id="campoCelular">
+				<table cellspacing="0" cellpadding="0" border="0" style="margin:0 3px 3px 0;display:inline;" id="campoCelular">
+					<tr>
+						<td style="padding-right:3px" id="imgCelular">
+							<img width="25" height="25" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/5zgozh91bbuykf7gv30h7l.png" alt="mobile" style="border:none;">
+						</td>
+						<td><span style="font:12px helvetica, arial;"><span style="color:#000000" id="htmlCelular">numero do celular</span></span>
+						</td>
+					</tr>
+				</table>
+				</div>
+				<div id="campoTelefone">
+				<table cellspacing="0" cellpadding="0" border="0" style="margin:0 3px 3px 0;display:inline;" id="campoTelefone">
+					<tr>
+						<td style="padding-right:3px" id="imgTelefone">
+							<img width="25" height="25" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/h73p28xduim1w4dgo9y203.png" alt="office" style="border:none;">
+						</td>
+						<td><span style="font:12px helvetica, arial;"><span style="color:#000000" id="htmlTelefone">numero do telefone</span></span>
+						</td>
+					</tr>
+				</table>
+				</div>
+<!-- Endereço -->
+				<table cellpadding="0" cellpadding="0" border="0">
+					<tr>
+<!-- Ícones-->
+					</tr>
+
+<!-- Site-->
+				</table>
+				<div id="campoSite">
+					<table>
+						<td style="padding-right:3px" id="imgSite">
+							<img width="25" height="25" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/h632olihpedmbdbry2mxc.png" alt="office" style="border:none;">
+						</td>
+						<td id='aEmail'>
+							<a href="https://www.amigotecnico.com.br" style="text-decoration:none;color:#3388cc;" id="htmlSite">www.amigotecnico.com.br</a> 
+						</td>	
+						</tr>
+					</table>
+				</div>
+
+	
+
+
+</table>
+
+<!-- A assinatura termina aqui-->
+</div> <!--coluna-->
+</div> <!--linha-->
+<!--Footer--><br><br>
+<footer class="page-footer font-small" style="background-color: #2E2E2E;">
+	<div class="footer-copyright text-center py-3" style="color: #ffffff" >© 2020 Tecnologia
+	  <a href="https://www.amigotecnico.com.br" > Amigo Técnico</a>
+	</div>
+</footer>
+</body>
+<!--Script do Upload-->
+<script>
+
+	 </script>
+<!--Script do Bootstrap Colorpicker-->
+<script>
+//Colorpicker do Nome	
+	$(function () {
+	  $('#inputNomeCor').colorpicker({
+		format: 'hex'
+	  });
+	  
+	});
+//Colorpicker do Cargo
+	$(function () {
+	  $('#inputCargoCor').colorpicker({
+		format: 'hex'
+	  })
+	  .on('colorpickerChange colorpickerCreate', function (e) {
+          e.colorpicker.picker.parents('.form-control')
+              .css('background-color', e.value);
+			});
+	});
+//Colorpicker do Departamento
+	$(function () {
+	  $('#inputDepartCor').colorpicker({
+		format: 'hex'
+	  })
+	  .on('colorpickerChange colorpickerCreate', function (e) {
+          e.colorpicker.picker.parents('.form-control')
+              .css('background-color', e.value);
+			});
+	});
+//Colorpicker do E-mail
+	$(function () {
+	  $('#inputEmailCor').colorpicker({
+		format: 'hex'
+	  })
+	  .on('colorpickerChange colorpickerCreate', function (e) {
+          e.colorpicker.picker.parents('.form-control')
+              .css('background-color', e.value);
+			});
+	});
+
+//Colorpicker do Celular
+	$(function () {
+	  $('#inputCelularCor').colorpicker({
+		format: 'hex'
+	  })
+	  .on('colorpickerChange colorpickerCreate', function (e) {
+          e.colorpicker.picker.parents('.form-control')
+              .css('background-color', e.value);
+			});
+	});
+
+//Colorpicker do Telefone
+	$(function () {
+	  $('#inputTelefoneCor').colorpicker({
+		format: 'hex'
+	  })
+	  .on('colorpickerChange colorpickerCreate', function (e) {
+          e.colorpicker.picker.parents('.form-control')
+              .css('background-color', e.value);
+			});
+	});
+
+//Colorpicker do Site
+	$(function () {
+	  $('#inputSiteCor').colorpicker({
+		format: 'hex'
+	  })
+	  .on('colorpickerChange colorpickerCreate', function (e) {
+          e.colorpicker.picker.parents('.form-control')
+              .css('background-color', e.value);
+			});
+	});
+  </script>
+  <!--Script dos Checkboxes-->
+<script>
+
+	//checkbox nome em negrito
+	const checkbox = document.getElementById('inputNomeNegrito');
+	checkbox.addEventListener('change', (event) => {
+	  if (event.target.checked) {
+		document.getElementById("PrimeiroNome").style.fontWeight = 'bold';
+	  } else {
+		document.getElementById("PrimeiroNome").style.fontWeight = 'normal';
+	  }
+	})
+
+	//checkbox Cargo em negrito
+	const checkboxCargo = document.getElementById('inputCargoNegrito');
+	checkboxCargo.addEventListener('change', (event) => {
+	  if (event.target.checked) {
+		document.getElementById("htmlCargo").style.fontWeight = 'bold';
+	  } else {
+		document.getElementById("htmlCargo").style.fontWeight = 'normal';
+	  }
+	})
+
+	//checkbox Departamento em negrito
+	const checkboxDepart = document.getElementById('inputDepartNegrito');
+	checkboxDepart.addEventListener('change', (event) => {
+	  if (event.target.checked) {
+		document.getElementById("htmlDepartamento").style.fontWeight = 'bold';
+	  } else {
+		document.getElementById("htmlDepartamento").style.fontWeight = 'normal';
+	  }
+	})
+
+	//checkbox do cargo
+	const chkCargo = document.getElementById('chkCargo');
+	chkCargo.addEventListener('change', (event) => {
+			if (event.target.checked) {
+				//document.getElementById('htmlCargo').style.display = 'inline';
+				document.getElementById('htmlCargo').innerHTML = "<br>" + document.getElementById('inputCargo').value;
+			} else {
+				//document.getElementById('htmlCargo').style.display = 'none';
+				document.getElementById('htmlCargo').innerHTML = " ";
+			}
+		})
+
+	//checkbox do cargo
+	const chkDepart = document.getElementById('chkDepart');
+	chkDepart.addEventListener('change', (event) => {
+			if (event.target.checked) {
+				document.getElementById('htmlDepartamento').innerHTML = "<br>" + document.getElementById('inputDepartamento').value;
+			} else {
+				document.getElementById('htmlDepartamento').innerHTML = " ";
+			}
+		})
+
+	//checkbox da Imagem do E-mail
+	const chkImgEmail = document.getElementById('chkImgEmail');
+	chkImgEmail.addEventListener('change', (event) => {
+		if (event.target.checked) {
+			document.getElementById('imgEmail').innerHTML = '<img width="25" height="25" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/zuhy6nfj1127y2te60vm.png" alt="email" style="border:none;">';
+		} else {
+			document.getElementById('imgEmail').innerHTML = " ";
+		}
+	})
+
+	//checkbox do E-mail
+	const chkEmail = document.getElementById('chkEmail');
+	chkEmail.addEventListener('change', (event) => {
+		if (event.target.checked) {
+			document.getElementById('htmlEmail').innerHTML = '<tr> <td style="padding-right:3px" id="imgEmail"> <img width="25" height="25" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/zuhy6nfj1127y2te60vm.png" alt="email" style="border:none;"> </td> <td><span style="font:12px helvetica, arial;" id="email"><a href="" style="color:#3388cc;text-decoration:none;" id="linkEmail"><span id="textoEmail">' + document.getElementById('inputEmail').value + '</span></a></span> </td> </tr>';
+			document.getElementById('textoEmail').style.color = document.getElementById('inputEmailCor').value;
+			document.getElementById('linkEmail').setAttribute('href', 'mailto:' + document.getElementById('inputEmail').value);
+		} else {
+			document.getElementById('htmlEmail').innerHTML = " ";
+		}
+	})
+
+	//checkbox do Celular
+	const chkCelular = document.getElementById('chkCelular');
+	chkCelular.addEventListener('change', (event) => {
+		if (event.target.checked) {
+			document.getElementById('campoCelular').innerHTML = '<tr> <td style="padding-right:3px" id="imgCelular"> <img width="25" height="25" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/5zgozh91bbuykf7gv30h7l.png" alt="mobile" style="border:none;"> </td>	<td><span style="font:12px helvetica, arial;"><span style="color:#000000" id="htmlCelular">' + document.getElementById('inputCelular').value + '</span></span> </td> </tr>';
+			document.getElementById('htmlCelular').style.color = document.getElementById('inputCelularCor').value;
+		} else {
+			document.getElementById('campoCelular').innerHTML = " ";
+		}
+	})
+
+	//checkbox da Imagem do Celular
+	const chkImgCelular = document.getElementById('chkImgCelular');
+	chkImgCelular.addEventListener('change', (event) => {
+		if (event.target.checked) {
+			document.getElementById('imgCelular').innerHTML = '<img width="25" height="25" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/5zgozh91bbuykf7gv30h7l.png" alt="mobile" style="border:none;">';
+		} else {
+			document.getElementById('imgCelular').innerHTML = " ";
+		}
+	})
+	
+	//checkbox do Telefone
+	const chkTel = document.getElementById('chkTelefone');
+	chkTel.addEventListener('change', (event) => {
+		if (event.target.checked) {
+			document.getElementById('campoTelefone').innerHTML = '<tr> <td style="padding-right:3px" id="imgTelefone"> <img width="25" height="25" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/h73p28xduim1w4dgo9y203.png" alt="office" style="border:none;"> </td>	<td><span style="font:12px helvetica, arial;"><span style="color:#000000" id="htmlTelefone">' + document.getElementById('inputTelefone').value + '</span></span> </td> </tr>';
+			document.getElementById('htmlTelefone').style.color = document.getElementById('inputTelefoneCor').value;
+		} else {
+			document.getElementById('campoTelefone').innerHTML = " ";
+		}
+	})
+
+	//checkbox da Imagem do Telefone
+	const chkImgTel = document.getElementById('chkImgTelefone');
+	chkImgTel.addEventListener('change', (event) => {
+		if (event.target.checked) {
+			document.getElementById('imgTelefone').innerHTML = '<img width="25" height="25" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/h73p28xduim1w4dgo9y203.png" alt="office" style="border:none;">';
+		} else {
+			document.getElementById('imgTelefone').innerHTML = " ";
+		}
+	})
+
+		//checkbox do Site
+		const chkSite = document.getElementById('chkSite');
+	chkSite.addEventListener('change', (event) => {
+		if (event.target.checked) {
+			document.getElementById('campoSite').innerHTML = '<td style="padding-right:3px" id="imgSite"> <img width="25" height="25" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/h632olihpedmbdbry2mxc.png" alt="office" style="border:none;">	</td> <td id="aEmail"> <a href="https://www.amigotecnico.com.br" style="text-decoration:none;color:#3388cc;" id="htmlSite">' + document.getElementById('inputSite').value + '</a> </td> </tr>';
+			document.getElementById('htmlSite').style.color = document.getElementById('inputSiteCor').value;
+		} else {
+			document.getElementById('campoSite').innerHTML = " ";
+		}
+	})
+
+	//checkbox da Imagem do Site
+	const chkImgSite = document.getElementById('chkImgSite');
+	chkImgSite.addEventListener('change', (event) => {
+		if (event.target.checked) {
+			document.getElementById('imgSite').innerHTML = '<img width="25" height="25" src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grfgqpc2fzmk/b/bucket/o/h632olihpedmbdbry2mxc.png" alt="website" style="border:none;">';
+		} else {
+			document.getElementById('imgSite').innerHTML = " ";
+		}
+	})
+</script>
+<script>
+	//Radio Button do formato da imagem
+	var forma = document.formatos.formato;
+        forma[0].onclick = function () { //Quadrado
+            console.log(this.value);
+			document.getElementById('htmlLogo').style.borderRadius = "0%";
+        }
+		forma[1].onclick = function () { //Arredondado
+			console.log(this.value);
+			document.getElementById('htmlLogo').style.borderRadius = "20%";
+		}
+		forma[2].onclick = function () { //Redondo
+			console.log(this.value);
+			document.getElementById('htmlLogo').style.borderRadius = "50%";
+		}
+	
+		
+</script>
+<!--Fim do script do Checkbox-->
+
+<!-------------------------------------------------------Schema.org----------------->
+<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "Organization",
+	  "name": "Amigo Técnico",
+	  "url": "https://www.amigotecnico.com.br",
+	  "address": "",
+	  "sameAs": [
+		"https://www.facebook.com/Amigo-T%C3%A9cnico-100285365100748",
+		"https://twitter.com/amigo_tecnico",
+		"https://www.instagram.com/amigotecnico",
+		"https://www.linkedin.com/company/amigot%C3%A9cnico"
+	  ]
+	}
+  </script>
+
+</html>
